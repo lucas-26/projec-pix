@@ -5,6 +5,13 @@ plugins {
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
 	kotlin("jvm") version "1.6.10"
 	kotlin("plugin.spring") version "1.6.10"
+	kotlin("plugin.jpa") version "1.4.32"
+}
+
+allOpen {
+	annotation("javax.persistence.Entity")
+	annotation("javax.persistence.Embeddable")
+	annotation("javax.persistence.MappedSuperclass")
 }
 
 group = "com.stud"
@@ -21,6 +28,11 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.springframework.boot:spring-boot-starter-web:2.6.2")
 	implementation("org.springframework.data:spring-data-jpa:2.6.1")
+	implementation("org.postgresql:postgresql:42.3.1")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa:2.6.2")
+	implementation("org.springframework.boot:spring-boot-starter-validation:2.6.2")
+	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 
